@@ -1,0 +1,16 @@
+{
+    "name": "smartmic",
+    "version": "1.2.0",
+    "description": "SmartMic: Your one stop shop for all things smart home",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "IMS Coding Projects",
+    "license": "MIT License",
+    "dependencies": {
+        "ask-sdk-core": "^2.7.0",
+        "ask-sdk-model": "^1.19.0",
+        "aws-sdk": "^2.326.0"
+    }
+}

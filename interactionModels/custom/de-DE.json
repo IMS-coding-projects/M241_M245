@@ -1,0 +1,201 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "intents": [
+                {
+                    "slots": [
+                        {
+                            "name": "action",
+                            "type": "ACTION_TYPE"
+                        },
+                        {
+                            "name": "stufe",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "name": "DunstabzugSteuernIntent",
+                    "samples": [
+                        "schalte die Rauchabzugsvorrichtung {action}",
+                        "schalte den Dunstabzug {action}",
+                        "stelle die Rauchabzugsvorrichtung auf Stufe {stufe}",
+                        "setze den Dunstabzug auf Stufe {stufe}",
+                        "Dunstabzug {action}",
+                        "Rauchabzug {action}",
+                        "Dunstabzug auf Stufe {stufe} stellen",
+                        "Rauchabzug auf Stufe {stufe} setzen",
+                        "stell den Dunstabzug auf {stufe}",
+                        "setze Dunstabzug auf {stufe}",
+                        "stelle die Lüftung auf Stufe {stufe}",
+                        "Lüftung {action}",
+                        "Lüftung auf Stufe {stufe}",
+                        "bitte den Dunstabzug {action}",
+                        "mach den Dunstabzug {action}",
+                        "mach die Lüftung {action}",
+                        "starte den Dunstabzug",
+                        "stoppe den Dunstabzug",
+                        "Dunstabzug einschalten",
+                        "Dunstabzug ausschalten",
+                        "Lüftung anmachen",
+                        "Lüftung ausmachen"
+                    ]
+                },
+                {
+                    "slots": [
+                        {
+                            "name": "action",
+                            "type": "ACTION_TYPE"
+                        },
+                        {
+                            "name": "id",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "farbe",
+                            "type": "FARBE_TYPE"
+                        },
+                        {
+                            "name": "helligkeit",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "name": "LichtSteuernIntent",
+                    "samples": [
+                        "schalte das Licht {id} {action}",
+                        "Licht {id} {action}",
+                        "stelle das Licht {id} auf {farbe}",
+                        "ändere die Farbe von Licht {id} zu {farbe}",
+                        "stelle die Helligkeit von Licht {id} auf {helligkeit} Prozent",
+                        "Licht {id} auf {helligkeit} Prozent Helligkeit",
+                        "Licht {id} auf {farbe} stellen",
+                        "mache das Licht {id} {action}",
+                        "Licht {id} {action}",
+                        "Licht {id} {action} schalten",
+                        "schalte das Licht {id} {action}",
+                        "ändere das Licht {id} auf {farbe}",
+                        "ändere die Beleuchtung {id} auf {farbe}",
+                        "Beleuchtung {id} {action}",
+                        "Beleuchtung {id} {action}",
+                        "Beleuchtung {id} auf {farbe} stellen",
+                        "Beleuchtung {id} auf {helligkeit} Prozent stellen",
+                        "stelle die Beleuchtung {id} auf {farbe}",
+                        "setze das Licht {id} auf {helligkeit} Prozent",
+                        "mach das Licht {id} heller",
+                        "mach das Licht {id} dunkler",
+                        "stell das Licht {id} auf {helligkeit} Prozent",
+                        "mach das Licht {id} auf {farbe}",
+                        "stelle das Licht {id} auf {farbe}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": [
+                {
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ein"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "an"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "aus"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "einschalten"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ausschalten"
+                            }
+                        }
+                    ],
+                    "name": "ACTION_TYPE"
+                },
+                {
+                    "values": [
+                        {
+                            "name": {
+                                "value": "rot"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "grün"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blau"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gelb"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "weiss"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "warmweiss"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "kaltweiss"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "orange"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "violett"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pink"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cyan"
+                            }
+                        }
+                    ],
+                    "name": "FARBE_TYPE"
+                }
+            ],
+            "invocationName": "smart mic"
+        }
+    }
+}
