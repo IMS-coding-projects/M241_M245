@@ -20,7 +20,7 @@ const DunstabzugSteuernIntentHandler = {
             speakOutput = `Die Rauchabzugsvorrichtung wird auf Stufe ${stufe} gestellt.`;
             // here we would have to implement the actual API call/SmartMic integration to set the fan speed
         } else if (action) {
-            if (action === 'ein' || action === 'an' || action === 'einschalten') {
+            if (action === 'ein' || action === 'an' || action === 'auf' || action === 'einschalten') {
                 speakOutput = 'Die Rauchabzugsvorrichtung wird eingeschaltet.';
                 // here we would have to implement the actual API call/SmartMic integration to turn on the fan
             } else if (action === 'aus' || action === 'ausschalten') {
