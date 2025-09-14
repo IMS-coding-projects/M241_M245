@@ -1,33 +1,104 @@
 {
     "interactionModel": {
         "languageModel": {
+            "invocationName": "smart mic",
             "intents": [
                 {
+                    "name": "MusikSteuernIntent",
+                    "slots": [
+                        {
+                            "name": "titel",
+                            "type": "AMAZON.MusicRecording"
+                        },
+                        {
+                            "name": "zeit",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "lautstaerke",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "bass",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "action",
+                            "type": "ACTION_TYPE"
+                        }
+                    ],
+                    "samples": [
+                        "spiele den Titel {titel}",
+                        "starte {titel}",
+                        "mach {titel} an",
+                        "spiel {titel}",
+                        "spiel das Lied {titel}",
+                        "stoppe die Musik",
+                        "Musik {action}",
+                        "mach die Musik {action}",
+                        "setze die Musik auf Minute {zeit}",
+                        "springe zu Minute {zeit}",
+                        "spule zu {zeit} Minuten",
+                        "ändere die Lautstärke auf {lautstaerke}",
+                        "mach lauter auf {lautstaerke}",
+                        "mach leiser auf {lautstaerke}",
+                        "stell die Lautstärke auf {lautstaerke}",
+                        "erhöhe den Bass auf {bass}",
+                        "reduziere den Bass auf {bass}",
+                        "stell den Bass auf {bass}",
+                        "ändere den Bass auf {bass}"
+                    ]
+                },
+                {
+                    "name": "HerdSteuernIntent",
+                    "slots": [
+                        {
+                            "name": "herdStufe",
+                            "type": "HERD_STUFE_TYPE"
+                        },
+                        {
+                            "name": "action",
+                            "type": "ACTION_TYPE"
+                        }
+                    ],
+                    "samples": [
+                        "stelle den Herd auf Stufe {herdStufe}",
+                        "setz den Herd auf Stufe {herdStufe}",
+                        "Herd auf {herdStufe} stellen",
+                        "stell den Herd auf {herdStufe}",
+                        "schalte den Herd {action}",
+                        "mach den Herd {action}",
+                        "Herd {action}",
+                        "Herd ausschalten",
+                        "Herd ausmachen"
+                    ]
+                },
+                {
+                    "name": "DunstabzugSteuernIntent",
                     "slots": [
                         {
                             "name": "action",
                             "type": "ACTION_TYPE"
                         },
                         {
-                            "name": "stufe",
+                            "name": "abzugstufe",
                             "type": "AMAZON.NUMBER"
                         }
                     ],
-                    "name": "DunstabzugSteuernIntent",
                     "samples": [
                         "schalte die Rauchabzugsvorrichtung {action}",
                         "schalte den Dunstabzug {action}",
-                        "stelle die Rauchabzugsvorrichtung auf Stufe {stufe}",
-                        "setze den Dunstabzug auf Stufe {stufe}",
+                        "stelle die Rauchabzugsvorrichtung auf Stufe {abzugstufe}",
+                        "setze den Dunstabzug auf Stufe {abzugstufe}",
                         "Dunstabzug {action}",
                         "Rauchabzug {action}",
-                        "Dunstabzug auf Stufe {stufe} stellen",
-                        "Rauchabzug auf Stufe {stufe} setzen",
-                        "stell den Dunstabzug auf {stufe}",
-                        "setze Dunstabzug auf {stufe}",
-                        "stelle die Lüftung auf Stufe {stufe}",
+                        "Dunstabzug auf Stufe {abzugstufe} stellen",
+                        "Rauchabzug auf Stufe {abzugstufe} setzen",
+                        "stell den Dunstabzug auf {abzugstufe}",
+                        "setze Dunstabzug auf {abzugstufe}",
+                        "stelle die Lüftung auf Stufe {abzugstufe}",
                         "Lüftung {action}",
-                        "Lüftung auf Stufe {stufe}",
+                        "Lüftung auf Stufe {abzugstufe}",
                         "bitte den Dunstabzug {action}",
                         "mach den Dunstabzug {action}",
                         "mach die Lüftung {action}",
@@ -40,6 +111,7 @@
                     ]
                 },
                 {
+                    "name": "LichtSteuernIntent",
                     "slots": [
                         {
                             "name": "action",
@@ -58,7 +130,6 @@
                             "type": "AMAZON.NUMBER"
                         }
                     ],
-                    "name": "LichtSteuernIntent",
                     "samples": [
                         "schalte das Licht {id} {action}",
                         "Licht {id} {action}",
@@ -105,6 +176,62 @@
             ],
             "types": [
                 {
+                    "name": "HERD_STUFE_TYPE",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "3"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "4"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "5"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "6"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "7"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "8"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "9"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "P"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ACTION_TYPE",
                     "values": [
                         {
                             "name": {
@@ -131,10 +258,10 @@
                                 "value": "ausschalten"
                             }
                         }
-                    ],
-                    "name": "ACTION_TYPE"
+                    ]
                 },
                 {
+                    "name": "FARBE_TYPE",
                     "values": [
                         {
                             "name": {
@@ -191,11 +318,9 @@
                                 "value": "cyan"
                             }
                         }
-                    ],
-                    "name": "FARBE_TYPE"
+                    ]
                 }
-            ],
-            "invocationName": "smart mic"
+            ]
         }
     }
 }
