@@ -7,6 +7,56 @@ function getSlotValue(handlerInput, slotName) {
     return slot && slot.value ? slot.value : null;
 }
 
+
+const MusikSteuernIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'MusikSteuernIntent';
+    },
+    handle(handlerInput) {
+        const { titel, zeit, lautstaerke, bass, action } = handlerInput.requestEnvelope.request.intent.slots;
+        let speakOutput = 'Okay, ich steuere die Musik. ';
+
+        if (titel && titel.value) {
+            speakOutput = `Ich spiele den Titel ${titel.value}.`;
+        } else if (zeit && zeit.value) {
+            speakOutput = `Ich springe zu Minute ${zeit.value}.`;
+        } else if (lautstaerke && lautstaerke.value) {
+            speakOutput = `Ich stelle die Lautstärke auf ${lautstaerke.value}.`;
+        } else if (bass && bass.value) {
+            speakOutput = `Ich ändere den Bass auf ${bass.value}.`;
+        } else if (action && action.value) {
+            speakOutput = `Musik ${action.value}.`;
+        }
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .getResponse();
+    }
+};
+
+
+const HerdSteuernIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'HerdSteuernIntent';
+    },
+    handle(handlerInput) {
+        const { herdStufe, action } = handlerInput.requestEnvelope.request.intent.slots;
+        let speakOutput = 'Okay, ich steuere den Herd. ';
+
+        if (herdStufe && herdStufe.value) {
+            speakOutput = `Ich stelle den Herd auf Stufe ${herdStufe.value}.`;
+        } else if (action && action.value) {
+            speakOutput = `Ich schalte den Herd ${action.value}.`;
+        }
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .getResponse();
+    }
+};
+
 const DunstabzugSteuernIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' && Alexa.getIntentName(handlerInput.requestEnvelope) === 'DunstabzugSteuernIntent';
@@ -118,5 +168,5 @@ const FallbackHandler = {
 
 // WHEN ADDING NEW INTENTS, MAKE SURE TO ADD THEM TO THE exports.handler BELOW!!
 exports.handler = Alexa.SkillBuilders.custom()
-    .addRequestHandlers(LaunchRequestHandler, DunstabzugSteuernIntentHandler, LichtSteuernIntentHandler, HelpIntentHandler, CancelAndStopIntentHandler, FallbackHandler)
+    .addRequestHandlers(LaunchRequestHandler, MusikSteuernIntentHandler, HerdSteuernIntentHandler, DunstabzugSteuernIntentHandler, LichtSteuernIntentHandler, HelpIntentHandler, CancelAndStopIntentHandler, FallbackHandler)
     .lambda();
