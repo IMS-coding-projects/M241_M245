@@ -1,7 +1,6 @@
 // index.js für Alexa Skill "SmartMic Küche"
 const Alexa = require('ask-sdk-core');
 
-// Hilfsfunktionen
 function getSlotValue(handlerInput, slotName) {
     const slot = Alexa.getSlot(handlerInput.requestEnvelope, slotName);
     return slot && slot.value ? slot.value : null;
